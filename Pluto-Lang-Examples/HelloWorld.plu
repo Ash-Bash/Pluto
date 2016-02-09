@@ -1,0 +1,6 @@
+class HelloWorld {
+
+    function main required () returns void
+        print("Hello, World!")
+    
+}
