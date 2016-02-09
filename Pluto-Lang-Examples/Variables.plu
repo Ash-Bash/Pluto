@@ -1,0 +1,21 @@
+class Variables
+
+    //Variables
+    //Initialized Objects
+    var string : String = "This is a String"
+    var int : Int = 1984
+    var double : Double = 3.14
+    var float : Float = 3.14f
+    var bool : Bool = false
+    var char : Char = 'P'
+    
+    //Not Initialized Objects
+    var emptyString : String
+    var emptyInt : Int
+    var emptyDouble : Double
+    var emptyFloat : Float
+    var emptyBool : Bool
+    var emptyChar : Char
+
+    function main requires () return void
+        print(This An Example for Types of Variables)
