@@ -1,0 +1,31 @@
+class Return 
+    
+    function main requires () returns void
+        print("This Is A Example On How Functions In Pluto Return Objects")
+        print(getString())
+        print(getInt())
+        print(getDouble())
+        print(getFloat())
+        print(getBool())
+        print(getChar())
+        
+        
+    function getString requires () returns String
+        return "This A String"
+    
+    function getInt requires () returns Int
+        return 1984
+        
+    function getDouble requires () returns Double
+        return 3.14
+        
+    function getFloat requires () returns Float
+        return 3.14f
+        
+    function getBool requires () returns Bool
+        return true
+        
+    function getChar requires () returns Char
+        return 'P'
+        
+    

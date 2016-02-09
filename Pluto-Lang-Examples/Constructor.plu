@@ -1,0 +1,7 @@
+class Contructor
+
+    constructor requires ()
+        super(self)
+        
+    function main requires () returns void
+        print("This Is A Contructor Example")

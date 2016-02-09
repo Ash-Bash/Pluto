@@ -1,6 +1,5 @@
-class HelloWorld {
+class HelloWorld 
 
-    function main required () returns void
+    function main requires () returns void
         print("Hello, World!")
     
-}
