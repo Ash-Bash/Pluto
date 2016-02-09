@@ -28,3 +28,18 @@ class ClassC
         
     function multipleTwoNumbers requires (a: Int, b: Int) returns Int
         return a * b
+        
+enum ClassD 
+    A_VALUE,
+    B_VALUE,
+    C_VALUE
+    
+enum ClassE as Int 
+    ONE_VALUE = 1,
+    TWO_VALUE = 2,
+    THREE_VALUE = 3
+    
+enum ClassE as String 
+    FOO_VALUE = "Foo",
+    BOO_VALUE = "Boo",
+    LOO_VALUE = "Loo"

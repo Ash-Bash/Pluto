@@ -1,0 +1,8 @@
+class Casting
+
+    var foo : Float = 3.14f
+
+    function main requires () returns void
+        print("This Is An Casting Example")
+        
+        var boo : Int = foo as Int
