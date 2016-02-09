@@ -1,0 +1,30 @@
+abstract class ClassA
+
+    //Variable Properites
+    let className : String = "Class A"
+    
+    abstract function CalcNumber() returns void
+
+class ClassB is ClassA
+
+    //Variable Properites
+    var classC : ClassC
+
+    function main requires () returns void
+        print("This Is A Class Example")
+        
+        classC = new ClassC()
+        
+    override function CalcNumber requires () returns void
+        print(classC.addTwoNumbers(4, 10) + classC.multipleTwoNumbers(5, 5))
+
+class ClassC
+
+    contructor requires ()
+        super(self)
+        
+    function addTwoNumbers requires (a: Int, b: Int) returns Int
+        return a + b
+        
+    function multipleTwoNumbers requires (a: Int, b: Int) returns Int
+        return a * b
