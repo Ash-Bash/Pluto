@@ -1,0 +1,24 @@
+class IfStatments
+    
+    function main requires () returns void
+        print("This Is A If Statment Example")
+        
+       var foo : Int = 404
+       var boo : Bool = false
+       
+       if foo == 101
+            boo = false
+       else if foo == 202
+            boo = false
+       else if foo == 404
+            boo = true
+       else
+            boo = false
+       endif
+       
+       var hoo : Float = 3.14f
+       var goo : Bool = false
+       
+       if hoo > 3.14
+            goo = true
+       endif
