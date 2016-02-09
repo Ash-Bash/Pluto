@@ -6,6 +6,7 @@ class Functions
         boo(101)
         loo(2, 2)
         goo() //You Can Have goo(22) Since Its a Optional Function
+        yoo() // You Can Have yoo(5, 5) but you need to make sure that you have both values covered
         hoo(8) //You can Have hoo(8, 45) but the you have to lock values from the left to the right not the other way around. lock values need to have a value
         
     function foo requires () returns void
@@ -18,7 +19,10 @@ class Functions
         print("Whats " + a + " + " + b + "? " + (a + b))
         
     function goo optional (value: Int = 10) returns void
-        print("Lets hope its not 10 again you lazy Devs ;)" + value)
+        print("Lets hope its not 10 again you lazy Devs ;) " + value)
+        
+    function yoo optional (a: Int = 42, b: Int = 42) returns void
+        print("Lets hope its not 42 for both values again you lazy Devs ;) " + a + " and " + b) 
         
     function hoo optional (a: Int lock, b: Int = 42) returns void
         print("Lets Hope you atleast enter one value: " + a + " and " + b) 
