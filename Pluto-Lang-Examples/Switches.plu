@@ -1,0 +1,30 @@
+class Switches
+
+    function main requires () returns void
+        print("This Is An Example Of Switches")
+        
+        var foo : Int = 4
+        
+        switch foo
+            case 0:
+                print("Option 0")
+                break
+           case 1:
+                print("Option 1")
+                break
+           case 2:
+                print("Option 2")
+                break
+           case 3:
+                print("Option 3")
+                break
+           case 4:
+                print("Option 4")
+                break
+           case 5:
+                print("Option 5")
+                break
+           default:
+                print("Unknown Action")
+                break
+        endswitch
