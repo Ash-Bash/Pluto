@@ -15,12 +15,20 @@ public class Function extends Block {
     private Parameter[] params;
     private Value returnValue;
 
-    public Function(Block superBlock) {
+    public Function(Block superBlock, String name, PrimitiveType type, Parameter[] params) {
         super(superBlock);
+
+        this.name = name;
+        this.type = type;
+        this.params = params;
     }
 
     @Override
     public void run() {
+        invoke();
+    }
 
+    public void invoke(Value... values) {
+        // Invokes the Function/Method with the Supplied values.
     }
 }
