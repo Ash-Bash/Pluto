@@ -24,7 +24,7 @@ public class Tokenizer {
         registerTokenData(new TokenData(Pattern.compile("^(" + Regex.COMPARISON + ")"), TokenType.TOKEN));
         registerTokenData(new TokenData(Pattern.compile("^(" + Regex.CONDITIONAL_OPERATOR + ")"), TokenType.TOKEN));
 
-        for (String t : new String[] { "=", "\\(", "\\)", "\\.", "\\,", "->", "\\:" }) {
+        for (String t : new String[] { "=", "\\(", "\\)", "\\.", "\\,", "->", ":" }) {
             registerTokenData(new TokenData(Pattern.compile("^(" + t + ")"), TokenType.TOKEN));
         }
 
