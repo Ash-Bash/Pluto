@@ -9,7 +9,8 @@ public class TokenizerTest {
         String code = "class HelloWorld\n" +
                 "\n" +
                 "    function main requires () returns void\n" +
-                "        print(\"Hello, World!\")";
+                "        print(\"Hello, World!\") \n" +
+                "var foo : String = \"Test String\"";
 
         Tokenizer tokenizer = new Tokenizer(code);
 
