@@ -1,10 +1,5 @@
 package com.ashbash.pluto.lang.tokenizer;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-
 /**
  * Created by ashleychapman on 10/02/2016.
  */
