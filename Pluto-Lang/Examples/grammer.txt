@@ -11,7 +11,7 @@ Class Declaration:
 'class <ident>'
 
 Function/Method Declaration:
-'function <ident> requires|optional (<ident>: <type>...) [Returns <ident>]'
+'function <ident> requires|optional (<ident>: <type>...) Returns <type>'
 
 Variable Declaration:
 'var <ident> : <type> [= <value>]'
