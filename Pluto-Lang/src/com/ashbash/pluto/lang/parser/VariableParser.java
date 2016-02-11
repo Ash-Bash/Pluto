@@ -26,6 +26,10 @@ public class VariableParser extends Parser<Block> {
 
         PrimitiveType type = PrimitiveType.valueOf(tokenizer.nextToken().getToken().toUpperCase());
 
+        if (type == PrimitiveType.VOID) {
+            throw new IllegalStateException("Cannot Declare Void as a Variable Type");
+        }
+
         tokenizer.nextToken(); // Skips The = Token
 
         Token v = tokenizer.nextToken();
