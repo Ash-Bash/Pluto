@@ -7,10 +7,12 @@ package com.ashbash.pluto.lang;
 /**
  * Represents a Variable Type
  */
-public enum PrimitiveType {
+public enum PrimitiveType implements  Type {
     BOOLEAN,
     DOUBLE,
     FLOAT,
+    BYTE,
+    CHAR,
     INTERGER,
     OBJECT,
     STRING,

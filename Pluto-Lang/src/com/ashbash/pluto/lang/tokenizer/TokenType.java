@@ -33,6 +33,14 @@ public enum TokenType {
      * Anything enclosed in double quotes "Hello" "1"
      */
     STRING_LITERAL,
+    /**
+     * A Number from 0 to 255
+     */
+    BYTE_LITERAL,
+    /**
+     * Any Character enclosed in ' - 'C'
+     */
+    CHAR_LITERAL,
 
 
 

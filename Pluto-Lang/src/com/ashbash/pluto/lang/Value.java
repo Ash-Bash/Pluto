@@ -10,15 +10,15 @@ package com.ashbash.pluto.lang;
 public class Value {
 
     //Variable Properties
-    private PrimitiveType type;
+    private Type type;
     private Object value;
 
-    public Value(PrimitiveType type, Object value) {
+    public Value(Type type, Object value) {
         this.type = type;
         this.value = value;
     }
 
-    public PrimitiveType getType() {
+    public Type getType() {
         return type;
     }
 

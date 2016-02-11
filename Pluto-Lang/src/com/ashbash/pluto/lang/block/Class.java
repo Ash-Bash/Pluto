@@ -4,10 +4,12 @@ package com.ashbash.pluto.lang.block;
  * Created by ashleychapman on 10/02/2016.
  */
 
+import com.ashbash.pluto.lang.Type;
+
 /**
  * Represents a Class
  */
-public class Class extends Block {
+public class Class extends Block implements Type {
 
     //Variable Properties
     private String name;

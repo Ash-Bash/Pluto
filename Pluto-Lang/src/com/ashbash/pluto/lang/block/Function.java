@@ -1,9 +1,6 @@
 package com.ashbash.pluto.lang.block;
 
-import com.ashbash.pluto.lang.Parameter;
-import com.ashbash.pluto.lang.PrimitiveType;
-import com.ashbash.pluto.lang.Value;
-import com.ashbash.pluto.lang.Variable;
+import com.ashbash.pluto.lang.*;
 
 /**
  * Created by ashleychapman on 10/02/2016.
@@ -12,11 +9,11 @@ public class Function extends Block {
 
     //Variable Properties
     private String name;
-    private PrimitiveType type;
+    private String type;
     private Parameter[] params;
     private Value returnValue;
 
-    public Function(Block superBlock, String name, PrimitiveType type, Parameter[] params) {
+    public Function(Block superBlock, String name, String type, Parameter[] params) {
         super(superBlock);
 
         this.name = name;
@@ -31,6 +28,8 @@ public class Function extends Block {
 
     public Value invoke(Value... values) {
         // Invokes the Function/Method with the Supplied values.
+
+        Type t = Type.match(type);
 
         if (values.length != params.length) {
             throw  new IllegalArgumentException("Wrong Number of Values for Parameter");
@@ -55,7 +54,7 @@ public class Function extends Block {
             }
         }
 
-        if (returnValue == null && type != PrimitiveType.VOID) {
+        if (returnValue == null && t != PrimitiveType.VOID) {
             throw new IllegalStateException("Expected Return Value, Got None");
         }
 

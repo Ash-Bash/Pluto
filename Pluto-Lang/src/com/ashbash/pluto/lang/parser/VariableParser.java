@@ -1,8 +1,10 @@
 package com.ashbash.pluto.lang.parser;
 
 import com.ashbash.pluto.lang.PrimitiveType;
+import com.ashbash.pluto.lang.Type;
 import com.ashbash.pluto.lang.Variable;
 import com.ashbash.pluto.lang.block.Block;
+import com.ashbash.pluto.lang.block.VariableBlock;
 import com.ashbash.pluto.lang.tokenizer.Token;
 import com.ashbash.pluto.lang.tokenizer.TokenType;
 import com.ashbash.pluto.lang.tokenizer.Tokenizer;
@@ -24,11 +26,7 @@ public class VariableParser extends Parser<Block> {
 
         tokenizer.nextToken(); // Skips the : token
 
-        PrimitiveType type = PrimitiveType.valueOf(tokenizer.nextToken().getToken().toUpperCase());
-
-        if (type == PrimitiveType.VOID) {
-            throw new IllegalStateException("Cannot Declare Void as a Variable Type");
-        }
+        String type = tokenizer.nextToken().getToken();
 
         tokenizer.nextToken(); // Skips The = Token
 
@@ -57,7 +55,6 @@ public class VariableParser extends Parser<Block> {
         }
 
         // Add this Variable to the Block
-        superBlock.addVariable(new Variable(superBlock, type, name, value));
-        return null;
+        return new VariableBlock(superBlock, type, name, value);
     }
 }

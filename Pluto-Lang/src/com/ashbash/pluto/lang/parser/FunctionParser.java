@@ -56,7 +56,7 @@ public class FunctionParser extends Parser<Function> {
 
         tokenizer.nextToken(); // Skips returns token.
 
-        PrimitiveType returnType = PrimitiveType.valueOf(tokenizer.nextToken().getToken().toUpperCase());
+        String returnType = tokenizer.nextToken().getToken();
 
         return new Function(superBlock, name, returnType, params.toArray(new Parameter[params.size()]));
     }

@@ -7,9 +7,9 @@ public class Parameter {
 
     //Variable Properties
     private String name;
-    private PrimitiveType type;
+    private Type type;
 
-    public Parameter(PrimitiveType type, String name) {
+    public Parameter(Type type, String name) {
         this.type = type;
         this.name = name;
     }
@@ -18,7 +18,7 @@ public class Parameter {
         return name;
     }
 
-    public PrimitiveType getType() {
+    public Type getType() {
         return type;
     }
 }
