@@ -44,6 +44,7 @@ public class FunctionParser extends Parser<Function> {
 
                 if (paramData[0] == null) {
                     paramData[0] = token.getToken();
+                    tokenizer.nextToken(); // Skips the : Token
                 }
                 else {
                     paramData[1] = token.getToken();
