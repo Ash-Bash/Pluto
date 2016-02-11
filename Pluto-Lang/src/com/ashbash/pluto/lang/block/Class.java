@@ -27,5 +27,11 @@ public class Class extends Block implements Type {
     @Override
     public void run() {
         // Run Main Method
+        for (Block b : getSubBlocks()) {
+            Function function = (Function) b;
+            if (function.getName().equals("main") && function.getType().equals("void") && function.getParameters().length == 0) {
+                function.run();
+            }
+        }
     }
 }
