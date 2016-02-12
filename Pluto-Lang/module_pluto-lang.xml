@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_pluto-lang" default="compile.module.pluto-lang">
+  <dirname property="module.pluto-lang.basedir" file="${ant.file.module_pluto-lang}"/>
+  
+  <property name="module.jdk.home.pluto-lang" value="${jdk.home.1.8}"/>
+  <property name="module.jdk.bin.pluto-lang" value="${jdk.bin.1.8}"/>
+  <property name="module.jdk.classpath.pluto-lang" value="jdk.classpath.1.8"/>
+  
+  <property name="compiler.args.pluto-lang" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="pluto-lang.output.dir" value="${module.pluto-lang.basedir}/out/production/Pluto-Lang"/>
+  <property name="pluto-lang.testoutput.dir" value="${module.pluto-lang.basedir}/out/test/Pluto-Lang"/>
+  
+  <path id="pluto-lang.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="pluto-lang.module.production.classpath">
+    <path refid="${module.jdk.classpath.pluto-lang}"/>
+  </path>
+  
+  <path id="pluto-lang.runtime.production.module.classpath">
+    <pathelement location="${pluto-lang.output.dir}"/>
+  </path>
+  
+  <path id="pluto-lang.module.classpath">
+    <path refid="${module.jdk.classpath.pluto-lang}"/>
+    <pathelement location="${pluto-lang.output.dir}"/>
+  </path>
+  
+  <path id="pluto-lang.runtime.module.classpath">
+    <pathelement location="${pluto-lang.testoutput.dir}"/>
+    <pathelement location="${pluto-lang.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.pluto-lang">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.pluto-lang">
+    <patternset refid="excluded.from.module.pluto-lang"/>
+  </patternset>
+  
+  <path id="pluto-lang.module.sourcepath">
+    <dirset dir="${module.pluto-lang.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.pluto-lang" depends="compile.module.pluto-lang.production,compile.module.pluto-lang.tests" description="Compile module Pluto-Lang"/>
+  
+  <target name="compile.module.pluto-lang.production" depends="register.custom.compilers" description="Compile module Pluto-Lang; production classes">
+    <mkdir dir="${pluto-lang.output.dir}"/>
+    <javac2 destdir="${pluto-lang.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.pluto-lang}/javac">
+      <compilerarg line="${compiler.args.pluto-lang}"/>
+      <bootclasspath refid="pluto-lang.module.bootclasspath"/>
+      <classpath refid="pluto-lang.module.production.classpath"/>
+      <src refid="pluto-lang.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.pluto-lang"/>
+    </javac2>
+    
+    <copy todir="${pluto-lang.output.dir}">
+      <fileset dir="${module.pluto-lang.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.pluto-lang.tests" depends="register.custom.compilers,compile.module.pluto-lang.production" description="compile module Pluto-Lang; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.pluto-lang" description="cleanup module">
+    <delete dir="${pluto-lang.output.dir}"/>
+    <delete dir="${pluto-lang.testoutput.dir}"/>
+  </target>
+</project>

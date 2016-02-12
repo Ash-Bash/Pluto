@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Pluto-Lang-Runtime">
+    <output-path>$PROJECT_DIR$/out/artifacts/Pluto_Lang_Runtime</output-path>
+    <root id="archive" name="Pluto-Lang-Runtime.jar">
+      <element id="module-output" name="Pluto-Lang" />
+    </root>
+  </artifact>
+</component>
