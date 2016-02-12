@@ -7,6 +7,7 @@ package com.ashbash.pluto.lang.block;
 import com.ashbash.pluto.lang.Variable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Represents a Black Of Code
@@ -25,6 +26,21 @@ public abstract class Block {
 
     public Block getSuperBlock() {
         return superBlock;
+    }
+
+    public ArrayList<Block> getBlockTree() {
+        ArrayList<Block> blocks = new ArrayList<Block>();
+
+        Block block = this;
+
+        do {
+            blocks.add(block);
+            block = block.getSuperBlock();
+        } while (block != null);
+
+        Collections.reverse(blocks);
+
+        return blocks;
     }
 
     public Block[] getSubBlocks() {

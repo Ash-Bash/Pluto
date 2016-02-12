@@ -1,0 +1,45 @@
+class Variables
+
+    //Variables
+    //Initialized Objects
+    var string : String = "This is a String"
+    var int : Int = 1984
+    var double : Double = 3.14
+    var float : Float = 3.14f
+    var bool : Bool = false
+    var char : Char = 'P'
+    
+    //Not Initialized Objects
+    var emptyString : String
+    var emptyInt : Int
+    var emptyDouble : Double
+    var emptyFloat : Float
+    var emptyBool : Bool
+    var emptyChar : Char
+    
+    //Unassigned Objects
+    var unassignedString = "This is a assigned String"
+    var unassignedInt = 1984
+    var unassignedDouble = 3.14
+    var unassignedFloat = 3.14f
+    var unassignedBool = false
+    var unassignedChar = 'P'
+    
+    //Constant Objects
+    let string : String = "This is a Constant String"
+    let int : Int = 1984
+    let double : Double = 3.14
+    let float : Float = 3.14f
+    let bool : Bool = false
+    let char : Char = 'P'
+    
+    //Unassigned Constant Objects
+    let unassignedConsString = "This is a assigned Constant String"
+    let unassignedConsInt = 1984
+    let unassignedConsDouble = 3.14
+    let unassignedConsFloat = 3.14f
+    let unassignedConsBool = false
+    let unassignedConsChar = 'P'
+
+    function main requires () return void
+        print(This An Example for Types of Variables)

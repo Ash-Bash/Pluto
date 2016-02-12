@@ -22,6 +22,18 @@ public class VariableBlock extends Block {
         this.value = value;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
     @Override
     public void run() {
         Type t = Type.match(type);

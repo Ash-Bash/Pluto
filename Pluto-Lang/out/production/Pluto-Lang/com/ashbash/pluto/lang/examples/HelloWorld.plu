@@ -1,4 +1,0 @@
-class HelloWorld
-
-    function main requires () returns void
-        print("Hello, World!")

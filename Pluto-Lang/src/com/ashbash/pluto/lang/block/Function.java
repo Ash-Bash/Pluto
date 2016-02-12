@@ -2,6 +2,8 @@ package com.ashbash.pluto.lang.block;
 
 import com.ashbash.pluto.lang.*;
 
+import java.util.Arrays;
+
 /**
  * Created by ashleychapman on 10/02/2016.
  */
@@ -40,8 +42,9 @@ public class Function extends Block {
 
     public Value invoke(Value... values) {
         // Invokes the Function/Method with the Supplied values.
-
         Type t = Type.match(type);
+
+        System.out.println("Invoking Function named: " + name + " of type: " + t + " with params " + Arrays.toString(params));
 
         if (values.length != params.length) {
             throw  new IllegalArgumentException("Wrong Number of Values for Parameter");
